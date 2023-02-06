@@ -21,6 +21,7 @@ class Item(models.Model):
     created_at = models.DateTimeField(auto_now_add=True) #defining created_at
     created_by = models.ForeignKey(User,related_name='items' ,on_delete=models.CASCADE) #defining created_by and On_delete=CASCADE means when a user is deleted all items are deleted which had been created by user before
     image = models.ImageField(upload_to='item_images',blank=True, null=True) #defining image
+    
     def __str__(self):
         return self.name
 
